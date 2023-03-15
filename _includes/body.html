@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="bundle.css" />
+<h3>{{ site.christoph.tagline }}</h3>
+
+My Skills: <br />
+<ul>
+    {% for skill in site.christoph.skills %}
+    <li>{{ skill }}</li>
+    {% endfor %}
+</ul>

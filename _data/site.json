@@ -1,0 +1,12 @@
+{
+    "christoph": {
+        "name": "Christoph Schild",
+        "headline": "Senior Software Engineer",
+        "tagline": "I do the Softwares",
+        "skills": [
+            "Coding",
+            "Running sometimes",
+            "Going Places with Water"
+        ]
+    }
+}
