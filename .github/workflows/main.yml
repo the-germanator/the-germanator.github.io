@@ -35,6 +35,7 @@ jobs:
           node-version: 16
       - run: npx --yes @11ty/eleventy --output=docs/   
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
