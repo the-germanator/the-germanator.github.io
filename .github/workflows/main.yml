@@ -33,7 +33,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npx --yes @11ty/eleventy --output=docs/   
+      - run: npx --yes @11ty/eleventy --output=docs/ 
+      - uses: actions/upload-artifact@master
+        with:
+          name: docs_folder
+          path: docs/  
   deploy:
     needs: build
     environment:
@@ -41,8 +45,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/download-artifact@master
+        with:
+          name: docs_folder
+          path: docs/
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
